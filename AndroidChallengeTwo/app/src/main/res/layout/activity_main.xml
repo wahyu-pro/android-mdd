@@ -14,5 +14,23 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
+    <include
+        android:id="@+id/content"
+        layout="@layout/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="0.409"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/main_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
