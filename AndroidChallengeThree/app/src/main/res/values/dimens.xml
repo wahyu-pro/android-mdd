@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_size">300dp</dimen>
+    <dimen name="icon_size">25dp</dimen>
+    <dimen name="width_btn">350dp</dimen>
+    <dimen name="height_btn">35dp</dimen>
+    <dimen name="text_name">17sp</dimen>
+    <dimen name="width_song">60dp</dimen>
+    <dimen name="height_song">70dp</dimen>
+</resources>

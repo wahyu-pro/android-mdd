@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    app:layout_editor_absoluteX="0dp"
+    app:layout_editor_absoluteY="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:text="@string/halaman_registrasi"
+            android:textColor="@color/btn_text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.412" />
+
+        <Button
+            android:id="@+id/btn_song"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btn_text_color"
+            android:background="#03A9F4"
+            android:text="@string/halaman_music_player"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_register"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_register"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register"
+            app:layout_constraintVertical_bias="0.033" />
+
+        <Button
+            android:id="@+id/btn_cart"
+            android:layout_width="@dimen/width_btn"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btn_text_color"
+            android:background="#E91E63"
+            android:text="@string/halaman_list_belanjaan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_song"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_song"
+            app:layout_constraintTop_toBottomOf="@+id/btn_song"
+            app:layout_constraintVertical_bias="0.05" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
