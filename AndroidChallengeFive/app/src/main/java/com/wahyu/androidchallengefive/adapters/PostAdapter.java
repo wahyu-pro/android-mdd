@@ -9,12 +9,12 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wahyu.androidchallengefive.R;
-import com.wahyu.androidchallengefive.databinding.ActivityPostBinding;
-import com.wahyu.androidchallengefive.models.DataItem;
+import com.wahyu.androidchallengefive.databinding.GridItemsBinding;
 import com.wahyu.androidchallengefive.models.PostModel;
 
 import java.util.ArrayList;
@@ -69,21 +69,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public PostAdapter.PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.grid_items, parent, false);
-        return new PostAdapter.PostViewHolder(view);
+        GridItemsBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
+                R.layout.grid_items,
+                parent,
+                false);
+        return new PostViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.PostViewHolder holder, int position) {
         PostModel post = postList.get(position);
-        holder.title.setText(post.getTitle());
-        holder.body.setText(post.getBody());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickCallback.onItemClicked(postList.get(holder.getAdapterPosition()));
-            }
-        });
+        holder.binding.judul.setText(post.getTitle());
+        holder.binding.body.setText(post.getBody());
+        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(postList.get(holder.getAdapterPosition())));
 
     }
 
@@ -133,11 +131,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     public class PostViewHolder extends RecyclerView.ViewHolder {
-        TextView title, body;
-        public PostViewHolder(@NonNull View itemView) {
-            super(itemView);
-            title = itemView.findViewById(R.id.judul);
-            body = itemView.findViewById(R.id.body);
+        GridItemsBinding binding;
+        public PostViewHolder(@NonNull GridItemsBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 

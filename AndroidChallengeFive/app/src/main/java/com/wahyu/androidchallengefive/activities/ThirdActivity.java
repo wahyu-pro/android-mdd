@@ -2,6 +2,7 @@ package com.wahyu.androidchallengefive.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import com.wahyu.androidchallengefive.R;
 import com.wahyu.androidchallengefive.adapters.PostAdapter;
 import com.wahyu.androidchallengefive.clients.ApiClient;
+import com.wahyu.androidchallengefive.databinding.ActivityThirdBinding;
 import com.wahyu.androidchallengefive.models.DataItem;
 import com.wahyu.androidchallengefive.models.PostModel;
 import com.wahyu.androidchallengefive.services.PostService;
@@ -34,11 +36,12 @@ public class ThirdActivity extends AppCompatActivity {
     PostViewModel viewModel;
     RecyclerView recyclerView;
     private SearchView searchView;
+    ActivityThirdBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_third);
 
         if (getSupportActionBar() != null){
             getSupportActionBar().setTitle(R.string.activity_third);
@@ -48,15 +51,10 @@ public class ThirdActivity extends AppCompatActivity {
         adapter = new PostAdapter();
         viewModel = new ViewModelProvider(ThirdActivity.this, new ViewModelProvider.NewInstanceFactory()).get(PostViewModel.class);
         viewModel.setListPosts();
-        getUser();
+        getPost();
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickCallback(new PostAdapter.OnItemClickCallbackPost() {
-            @Override
-            public void onItemClicked(PostModel data) {
-                showSelectedUser(data);
-            }
-        });
+        adapter.setOnItemClickCallback(this::showSelectedUser);
 
     }
 
@@ -112,7 +110,7 @@ public class ThirdActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    private void getUser(){
+    private void getPost(){
         viewModel.getListPosts().observe(ThirdActivity.this, new Observer<List<PostModel>>() {
             @Override
             public void onChanged(List<PostModel> postModels) {
