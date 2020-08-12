@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.wahyu.androidchallengefive.R;
 import com.wahyu.androidchallengefive.adapters.PostAdapter;
@@ -34,7 +36,6 @@ public class ThirdActivity extends AppCompatActivity {
 
     PostAdapter adapter;
     PostViewModel viewModel;
-    RecyclerView recyclerView;
     private SearchView searchView;
     ActivityThirdBinding binding;
 
@@ -47,13 +48,12 @@ public class ThirdActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(R.string.activity_third);
         }
 
-        recyclerView = findViewById(R.id.recyclerView);
         adapter = new PostAdapter();
         viewModel = new ViewModelProvider(ThirdActivity.this, new ViewModelProvider.NewInstanceFactory()).get(PostViewModel.class);
         viewModel.setListPosts();
         getPost();
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
-        recyclerView.setAdapter(adapter);
+        binding.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayout.VERTICAL));
+        binding.recyclerView.setAdapter(adapter);
         adapter.setOnItemClickCallback(this::showSelectedUser);
 
     }
