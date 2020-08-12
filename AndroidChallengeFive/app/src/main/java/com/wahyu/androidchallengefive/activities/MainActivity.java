@@ -3,7 +3,9 @@ package com.wahyu.androidchallengefive.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -17,12 +19,18 @@ import com.wahyu.androidchallengefive.R;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnOne, btnTwo;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showCustomDialog();
+
+        sharedPreferences = getSharedPreferences(SplashScreenActivity.MY_PREFRENCES, Context.MODE_PRIVATE);
+
+        if (!SplashScreenActivity.syarat){
+            showCustomDialog();
+        }
 
         btnOne = findViewById(R.id.btn_number_one);
         btnTwo = findViewById(R.id.btn_number_two);
