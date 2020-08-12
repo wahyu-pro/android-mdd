@@ -51,15 +51,19 @@ public class ThirdActivity extends AppCompatActivity {
         getUser();
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickCallback(this::showSelectedUser);
+        adapter.setOnItemClickCallback(new PostAdapter.OnItemClickCallbackPost() {
+            @Override
+            public void onItemClicked(PostModel data) {
+                showSelectedUser(data);
+            }
+        });
 
     }
 
     private void showSelectedUser(PostModel data) {
-        Bundle bundle = new Bundle();
-        Intent i = new Intent(getApplicationContext(), PostActivity.class);
-        i.putExtras(bundle);
-        startActivity(i);
+        Intent moveWithObjectIntent = new Intent(ThirdActivity.this, PostActivity.class);
+        moveWithObjectIntent.putExtra(PostActivity.EXTRA_POST, data);
+        startActivity(moveWithObjectIntent);
     }
 
     @Override
