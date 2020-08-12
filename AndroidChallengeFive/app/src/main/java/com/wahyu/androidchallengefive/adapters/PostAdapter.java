@@ -2,11 +2,9 @@ package com.wahyu.androidchallengefive.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -80,8 +78,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public void onBindViewHolder(@NonNull PostAdapter.PostViewHolder holder, int position) {
         PostModel post = postList.get(position);
         holder.bindData(post);
-//        holder.binding.judul.setText(post.getTitle());
-//        holder.binding.body.setText(post.getBody());
         holder.binding.getRoot().setOnClickListener(v -> onItemClickCallback.onItemClicked(postList.get(holder.getAdapterPosition())));
 
     }
