@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wahyu.androidchallengefive.R;
+import com.wahyu.androidchallengefive.databinding.ActivityPostBinding;
 import com.wahyu.androidchallengefive.models.DataItem;
 import com.wahyu.androidchallengefive.models.PostModel;
 
