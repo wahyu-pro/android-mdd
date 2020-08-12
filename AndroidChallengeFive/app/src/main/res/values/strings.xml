@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AndroidChallengeFive</string>
+    <string name="text_accepted">Disarankan sebelum mengakses Situs ini lebih jauh,
+        Anda terlebih dahulu membaca dan memahami syarat dan ketentuan yang berlaku.
+        Syarat dan ketentuan berikut adalah ketentuan dalam pengunjungan Situs, isi dan/atau konten,
+        layanan, serta fitur lainnya yang ada di dalam Situs. Dengan mengakses atau menggunakan Situs atau aplikasi lainnya yang disediakan oleh atau dalam Situs,
+        berarti Anda telah memahami dan menyetujui serta terikat dan tunduk dengan segala syarat dan ketentuan yang berlaku di Situs ini.</string>
+    <string name="accept">saya setuju</string>
+    <string name="selanjutnya">SELANJUTNYA</string>
+    <string name="btn_number_one">Number One</string>
+    <string name="btn_number_two">NUMBER TWO</string>
+    <string name="syarat">Syarat dan ketentuan</string>
+    <string name="fullname">FullName</string>
+    <string name="email">Email</string>
+    <string name="search">search</string>
+    <string name="search_hint">Search …</string>
+    <string name="activity_second">Second Activity</string>
+    <string name="activity_user">User Activity</string>
+    <string name="activity_third">Third Activity</string>
+    <string name="activity_post">Post Activity</string>
+</resources>
