@@ -79,9 +79,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.PostViewHolder holder, int position) {
         PostModel post = postList.get(position);
-        holder.binding.judul.setText(post.getTitle());
-        holder.binding.body.setText(post.getBody());
-        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(postList.get(holder.getAdapterPosition())));
+        holder.bindData(post);
+//        holder.binding.judul.setText(post.getTitle());
+//        holder.binding.body.setText(post.getBody());
+        holder.binding.getRoot().setOnClickListener(v -> onItemClickCallback.onItemClicked(postList.get(holder.getAdapterPosition())));
 
     }
 
@@ -135,6 +136,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         public PostViewHolder(@NonNull GridItemsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+        }
+        public void bindData(PostModel postModel) {
+            binding.setPost(postModel);
         }
     }
 
