@@ -12,14 +12,14 @@
         android:layout_height="300dp"
         android:elevation="30dp"
         app:cardCornerRadius="30dp"
+        app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@android:color/darker_gray"
-        app:strokeWidth="1dp"
-        tools:ignore="MissingConstraints">
+        app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -60,6 +60,8 @@
         android:layout_height="300dp"
         android:elevation="30dp"
         app:cardCornerRadius="30dp"
+        app:cardElevation="2dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
         tools:layout_editor_absoluteX="40dp">
@@ -74,7 +76,7 @@
                 android:layout_height="match_parent"
                 android:background="#D5E8BE"
                 android:scaleType="fitXY"
-                android:src="@drawable/gamepad" />
+                android:src="@drawable/headphone3" />
 
             <TextView
                 android:layout_width="250dp"
@@ -84,15 +86,14 @@
                 android:fontFamily="@font/poppins"
                 android:lineHeight="30dp"
                 android:maxLength="20"
-                android:text="Console and Joystick"
-                android:textColor="@android:color/white"
+                android:text="Headphone"
+                android:textColor="#FFF7F7"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.883"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintVertical_bias="0.883" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

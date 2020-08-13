@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public void moveToNumberThree(View view) {
         startActivity(new Intent(getApplicationContext(), ThirdActivity.class));
     }
+
+    public void moveToNumberFour(View view) {
+        startActivity(new Intent(getApplicationContext(), ActivityFour.class));
+    }
 }
