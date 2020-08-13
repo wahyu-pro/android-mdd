@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="40dp"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins"
                     android:text="Phones"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins"
                     android:text="Video Games"
                     android:textStyle="bold"
                     android:textSize="20sp"
@@ -130,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins"
                     android:text="Camera"
                     android:textStyle="bold"
                     android:textSize="20sp"
